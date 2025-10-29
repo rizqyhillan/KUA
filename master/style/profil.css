@@ -1,0 +1,95 @@
+.profil-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+}
+
+.profil-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 35px;
+}
+
+.profil-container h2 {
+  color: #2e7d32;
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-size: 26px;
+  border-bottom: 2px solid #e0e0e0;
+  padding-bottom: 8px;
+}
+
+.profil-container p {
+  color: #333;
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: justify;
+  margin-bottom: 15px;
+}
+
+.struktur {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.struktur img {
+  width: 100%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.struktur img:hover {
+  transform: scale(1.02);
+}
+
+.caption {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #555;
+  font-style: italic;
+}
+
+.profil-container ul {
+  margin: 10px 0 20px 25px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.profil-container li {
+  margin-bottom: 8px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #1b5e20;
+}
+
+@media (max-width: 600px) {
+  .profil-container {
+    padding: 25px;
+  }
+
+  .profil-container h2 {
+    font-size: 22px;
+  }
+
+  .struktur img {
+    max-width: 100%;
+  }
+}

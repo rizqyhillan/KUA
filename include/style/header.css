@@ -1,0 +1,73 @@
+header {
+  width: 100%;
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.lorea {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.logo {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.lorea h1 {
+  font-size: 26px;
+  color: #2e7d32;
+  font-family: "times new roman", serif;
+  font-weight: 600;
+  margin: 0;
+}
+
+.menu ul {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  margin: 0;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.menu a:hover {
+  color: #007a3d;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .menu ul {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .lorea h1 {
+    font-size: 20px;
+  }
+}

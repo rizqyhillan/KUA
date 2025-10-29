@@ -1,0 +1,91 @@
+.wakaf-section {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+}
+
+.wakaf-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 30px;
+}
+
+.wakaf-container h2 {
+  color: #2e7d32;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wakaf-container h3 {
+  color: #1b5e20;
+  margin-top: 25px;
+}
+
+.wakaf-container p, li {
+  line-height: 1.6;
+  color: #333;
+}
+
+.wakaf-container ul, .wakaf-container ol {
+  margin-left: 25px;
+}
+
+blockquote {
+  border-left: 4px solid #2e7d32;
+  padding-left: 15px;
+  margin: 15px 0;
+  color: #555;
+  font-style: italic;
+  background-color: #f3f3f3;
+  border-radius: 6px;
+}
+
+.wa-button {
+  display: inline-block;
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-top: 10px;
+  transition: 0.3s;
+}
+
+.wa-button:hover {
+  background-color: #1b5e20;
+}
+
+.gawak {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.gawak img {
+  width: 70%;
+  max-width: 700px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.gawak img:hover {
+  transform: scale(1.02);
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 25px auto 0;
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #1b5e20;
+}

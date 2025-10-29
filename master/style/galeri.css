@@ -1,0 +1,61 @@
+.gacor {
+  padding: 40px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+.gacor h2 {
+  color: #2e7d32;
+  margin-bottom: 30px;
+  font-size: 28px;
+}
+
+.gal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.gatim {
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gatim:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.gatim img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.caption {
+  padding: 10px 15px;
+  font-size: 14px;
+  color: #333;
+  background-color: #fafafa;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #1b5e20;
+}

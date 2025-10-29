@@ -1,0 +1,62 @@
+.jadwal-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  text-align: center;
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.jadwal-container h2 {
+  color: #2e7d32;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 25px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.jadwal-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+.jadwal-table th {
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 10px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.jadwal-table td {
+  padding: 8px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.jadwal-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.jadwal-table tr:hover {
+  background-color: #e8f5e9;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #1b5e20;
+}

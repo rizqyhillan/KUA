@@ -1,0 +1,218 @@
+html, body {
+  height: 100%;
+  overflow-x: hidden  ;
+  -webkit-overflow-scrolling: touch;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #fff;
+  text-align: center;
+  color: #333;
+  line-height: 1.5;
+}
+
+.text-jalan {
+  background-color: #ffffff;
+  border-top: 2px solid #e0e0e0;
+  border-bottom: 2px solid #e0e0e0;
+  padding: 12px 0;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: relative;
+}
+
+.jalanan {
+  display: inline-block;
+  white-space: nowrap;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  animation: jalan 20s linear infinite;
+}
+
+@keyframes jalan {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  justify-content: center;
+  margin: 30px auto;
+  max-width: 1000px;
+}
+
+.kartu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;  
+  justify-content: center;
+  background-color: #2e7d32;
+  color: #fff;
+  padding: 30px 20px;
+  border-radius: 15px;
+  text-align: center;
+  text-decoration: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+
+.kartu:hover {
+  background-color: #00994d;
+  transform: translateY(-5px);
+}
+
+.kartu img {
+  width: 55px;
+  height: 55px;
+  margin-bottom: 12px;
+  transition: transform 0.6s ease;
+}
+
+.kartu:hover img {
+  transform: rotate(360deg);
+}
+
+.kartu p {
+  font-weight: 600;
+  font-size: 15px;
+  color: #fff;
+  margin: 0;
+  line-height: 1.3;
+}
+
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 998;
+}
+
+.bottom-sheet {
+  position: fixed;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  background: #fff;
+  border-radius: 20px 20px 0 0;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.2);
+  transition: bottom 0.4s ease;
+  z-index: 999;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.sheet-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.sheet-header h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #2e7d32;
+}
+
+.sheet-header button {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: #555;
+}
+
+.sheet-content {
+  margin-top: 15px;
+  text-align: left;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.bottom-sheet.active {
+  bottom: 0;
+}
+
+.sheet-menu {
+  list-style: none;
+  margin: 15px 0 0;
+  padding: 0;
+}
+
+.sheet-menu li {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.sheet-menu li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 16px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.sheet-menu li:hover {
+  background-color: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+.sheet-menu li a i.icon-link {
+  width: 8px;
+  height: 8px;
+  background-color: #2e7d32;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+@media (max-width: 768px) {
+  .info {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+
+  .kartu {
+    width: 100%;
+    height: 150px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .info {
+    grid-template-columns: 1fr;
+    padding: 25px 15px;
+  }
+}

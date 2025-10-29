@@ -1,0 +1,88 @@
+.konsultasi-container {
+  text-align: center;
+  padding: 40px 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.konsultasi-container h2 {
+  font-size: 28px;
+  color: #2e7d32;
+  margin-bottom: 10px;
+}
+
+.sub-text {
+  color: #555;
+  font-size: 15px;
+  margin-bottom: 30px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-content: center;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  border: 1px solid #d0d0d0;
+  border-radius: 12px;
+  text-decoration: none;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+}
+
+.contact-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+.contact-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.contact-info h3 {
+  font-size: 18px;
+  color: #2e7d32;
+  margin: 0;
+}
+
+.contact-info p {
+  margin: 3px 0;
+  color: #555;
+  font-size: 14px;
+}
+
+.wa-button {
+  display: inline-block;
+  margin-top: 5px;
+  color: #fff;
+  background-color: #25d366;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 13px;
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+  background-color: #1b5e20;
+}
