@@ -9,7 +9,7 @@
 
     <nav class="menu">
       <ul>
-        <li><a href="../master/JadwalSholat.php">Jadwal Sholat</a></li>
+        <li><a href="https://www.jadwalsholat.org/adzan/monthly.php">Jadwal Sholat</a></li>
         <li><a href="../master/survei.php">Survei</a></li>
         <li><a href="../master/profil.php">Profil</a></li>
       </ul>
