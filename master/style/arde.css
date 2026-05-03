@@ -1,0 +1,150 @@
+/* ===== HALAMAN DETAIL ARTIKEL ===== */
+
+.arde {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Container artikel */
+.ardox {
+  background: #fff;
+  border-radius: 15px;
+  padding: 30px;
+  max-width: 900px;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: left;
+  line-height: 1.9;
+}
+
+/* Judul artikel */
+.ardox h1,
+.ardox h2 {
+  color: #2e7d32;
+  font-size: 28px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Garis bawah judul (biar keren) */
+.ardox h1::after,
+.ardox h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #2e7d32;
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+/* Gambar artikel */
+.gamkov {
+  width: 100%;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.gamkon {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin: 20px 0;
+  object-fit: contain;
+}
+
+/* Tabel */
+.table-artikel {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.table-artikel th {
+  background-color: #2e7d32;
+  color: white;
+  padding: 10px;
+  text-align: left;
+}
+
+.table-artikel td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.table-artikel tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table-artikel tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Paragraf */
+.ardox p {
+  color: #333;
+  font-size: 16px;
+  line-height: 1.8;
+  text-align: justify;
+  text-indent: 30px;
+  margin-bottom: 18px;
+}
+
+/* .ardox p:first-of-type {
+    text-indent: 0;
+} */
+
+/* Huruf pertama gede (style berita) */
+.first:first-letter {
+  font-size: 32px;
+  font-weight: bold;
+  /* float: left; */
+  margin-right: 8px;
+  line-height: 1;
+  color: #2e7d32;
+}
+
+/* Tombol kembali */
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 10px 20px;
+  background-color: #2e7d32;
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background-color: #1b5e20;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .ardox {
+    padding: 20px;
+  }
+
+  .ardox h1,
+  .ardox h2 {
+    font-size: 22px;
+  }
+
+  .ardox p {
+    font-size: 15px;
+  }
+
+  .ardox img {
+    max-height: 250px;
+  }
+}

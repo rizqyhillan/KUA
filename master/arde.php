@@ -6,7 +6,7 @@
   <title>Artikel - KUA Kalisat Jember</title>
   <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="../include/style/header.css">
-  <link rel="stylesheet" href="style/artikel.css">
+  <link rel="stylesheet" href="style/arde.css">
   <link rel="stylesheet" href="../include/style/footer.css">
 </head>
 <body>

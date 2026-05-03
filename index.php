@@ -13,7 +13,7 @@
 
   <div class="text-jalan">
     <div class=" jalanan">
-      - Selamat Datang di Website Resmi KUA Kecamatan Kalisat Kabupaten Jember - 
+      - Selamat Datang di Website Resmi KUA Kecamatan Kalisat Kabupaten Jember -⚠️ WEBSITE INI MASIH TAHAP PERKEMBANGAN ⚠️-
   </div>
   <section class="info">
   <a class="kartu">
