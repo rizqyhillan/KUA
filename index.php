@@ -14,7 +14,7 @@
   <!-- Announcement Ticker -->
   <div class="text-jalan">
     <div class="jalanan">
-      Selamat Datang di Portal Resmi KUA Kecamatan Kalisat Kabupaten Jember &nbsp;—&nbsp; ⚠️ WEBSITE INI MASIH TAHAP PERKEMBANGAN ⚠️
+      Selamat Datang di Portal Resmi KUA Kecamatan Kalisat Kabupaten Jember
     </div>
   </div>
 
