@@ -21,7 +21,7 @@ const linkMap = {
     { text: "Pencatatan Rujuk", url: "master/rujuk.php" },
     { text: "Pelayanan Wakaf", url: "master/wakaf.php" }
   ],
-  "KONSULTASI PERNIKAHAN & HUKUM ISLAM": [
+  "FIQIH PERNIKAHAN": [
     { text: "Chat Petugas KUA", url: "master/konsultasi.php" }
   ],
   "BERITA & ARTIKEL": [

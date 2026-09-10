@@ -11,7 +11,7 @@
     </div>
 
     <div class="fooboom">
-      <p>&copy; 2025 KUA Kalisat Jember. All rights reserved.</p>
+      <p>&copy; 2026 KUA Kalisat Jember. All rights reserved.</p>
     </div>
   </div>
 </footer>

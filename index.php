@@ -96,7 +96,7 @@
           <span class="kartu-badge">Konsultasi</span>
         </div>
         <div class="kartu-body">
-          <h3>KONSULTASI PERNIKAHAN & HUKUM ISLAM</h3>
+          <h3>FIQIH PERNIKAHAN</h3>
           <p>Konsultasi langsung dengan petugas KUA terkait keluarga sakinah & hukum Islam.</p>
         </div>
         <div class="kartu-footer">
