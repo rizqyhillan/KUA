@@ -15,7 +15,7 @@
     max-width: 700px;
     margin: 0 auto 30px;
     overflow: hidden;
-    padding-top: 32%;
+    aspect-ratio: 16 / 9;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
@@ -50,16 +50,10 @@
         font-size: 24px;
     }
 
-    .vidwrap {
-        padding-top: 56.25%;
-    }
 }
 
 @media (max-width: 480px) {
     .vidtur h2 {
         font-size: 20px;
-    }
-    .vidwrap {
-        padding-top: 75%;
     }
 }

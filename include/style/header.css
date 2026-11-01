@@ -1,3 +1,12 @@
+body {
+  margin: 0;
+}
+
+header,
+header * {
+  box-sizing: border-box;
+}
+
 header {
   width: 100%;
   background-color: #ffffff;
@@ -9,7 +18,8 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
+  gap: 24px;
+  padding: 12px 24px;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -18,6 +28,15 @@ header {
   display: flex;
   align-items: center;
   gap: 15px;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.brand-logos {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
 }
 
 .logo {
@@ -26,12 +45,17 @@ header {
   object-fit: contain;
 }
 
-.lorea h1 {
+.site-name {
   font-size: 26px;
   color: #2e7d32;
   font-family: "times new roman", serif;
   font-weight: 600;
   margin: 0;
+  line-height: 1.2;
+}
+
+.menu {
+  flex-shrink: 0;
 }
 
 .menu ul {
@@ -40,9 +64,14 @@ header {
   align-items: center;
   gap: 25px;
   margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
 }
 
 .menu a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   text-decoration: none;
   color: #333;
   font-weight: 500;
@@ -54,7 +83,14 @@ header {
   color: #007a3d;
 }
 
-@media (max-width: 768px) {
+.lorea:focus-visible,
+.menu a:focus-visible {
+  outline: 3px solid #047857;
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+@media (max-width: 992px) {
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -64,10 +100,38 @@ header {
   .menu ul {
     flex-direction: row;
     align-items: flex-start;
-    gap: 10px;
+    gap: 24px;
   }
 
-  .lorea h1 {
+  .site-name {
     font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 12px 16px;
+    gap: 8px;
+  }
+
+  .lorea {
+    gap: 12px;
+  }
+
+  .brand-logos {
+    gap: 8px;
+  }
+
+  .logo {
+    width: 38px;
+    height: 38px;
+  }
+
+  .site-name {
+    font-size: 18px;
+  }
+
+  .menu a {
+    font-size: 14px;
   }
 }

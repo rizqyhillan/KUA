@@ -1,4 +1,3 @@
-const overlay = document.getElementById('overlay');
 const bottomSheet = document.getElementById('bottomSheet');
 const closeSheet = document.getElementById('closeSheet');
 const sheetTitle = document.getElementById('sheet-title');
@@ -6,6 +5,7 @@ const sheetContent = document.getElementById('sheet-content');
 
 const searchInput = document.getElementById('searchInput');
 const searchResults = document.getElementById('searchResults');
+let activeCard = null;
 
 const linkMap = {
   "INFO NIKAH": [
@@ -51,7 +51,7 @@ Object.keys(linkMap).forEach(category => {
 // Event Klik Kartu
 document.querySelectorAll('.kartu').forEach(card => {
   card.addEventListener('click', () => {
-    const title = card.querySelector('h3').innerText.trim();
+    const title = card.dataset.category;
     sheetTitle.textContent = title;
 
     const items = linkMap[title] || [];
@@ -62,7 +62,7 @@ document.querySelectorAll('.kartu').forEach(card => {
       items.forEach(item => {
         html += `
           <li>
-            <a href="${item.url}" target="${item.url.startsWith('http') ? '_blank' : '_self'}">
+            <a href="${item.url}" target="${item.url.startsWith('http') ? '_blank' : '_self'}"${item.url.startsWith('http') ? ' rel="noopener noreferrer"' : ''}>
               <span class="link-text">
                 <i class="icon-link"></i> ${item.text}
               </span>
@@ -76,18 +76,51 @@ document.querySelectorAll('.kartu').forEach(card => {
     }
 
     sheetContent.innerHTML = html;
-    overlay.classList.add('active');
-    bottomSheet.classList.add('active');
+    searchResults.classList.remove('active');
+    activeCard = card;
+    card.setAttribute('aria-expanded', 'true');
+    document.body.classList.add('sheet-open');
+    bottomSheet.showModal();
   });
 });
 
 const closeBottomSheet = () => {
-  overlay.classList.remove('active');
-  bottomSheet.classList.remove('active');
+  bottomSheet.close();
 };
 
 closeSheet.addEventListener('click', closeBottomSheet);
-overlay.addEventListener('click', closeBottomSheet);
+bottomSheet.addEventListener('keydown', (event) => {
+  if (event.key !== 'Tab') return;
+  const controls = bottomSheet.querySelectorAll('button, a[href]');
+  const first = controls[0];
+  const last = controls[controls.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+});
+
+bottomSheet.addEventListener('close', () => {
+  document.body.classList.remove('sheet-open');
+  if (activeCard) {
+    activeCard.setAttribute('aria-expanded', 'false');
+    activeCard.focus({ preventScroll: true });
+    activeCard = null;
+  }
+});
+
+// A backdrop click targets the dialog but falls outside its visible rectangle.
+bottomSheet.addEventListener('click', (event) => {
+  if (event.target !== bottomSheet) return;
+  const rect = bottomSheet.getBoundingClientRect();
+  if (event.clientX < rect.left || event.clientX > rect.right ||
+      event.clientY < rect.top || event.clientY > rect.bottom) {
+    closeBottomSheet();
+  }
+});
 
 // Fitur Live Search
 searchInput.addEventListener('input', () => {
@@ -108,7 +141,7 @@ searchInput.addEventListener('input', () => {
     filtered.forEach(item => {
       html += `
         <li>
-          <a href="${item.url}" target="${item.url.startsWith('http') ? '_blank' : '_self'}">
+          <a href="${item.url}" target="${item.url.startsWith('http') ? '_blank' : '_self'}"${item.url.startsWith('http') ? ' rel="noopener noreferrer"' : ''}>
             <span class="res-title">${item.text}</span>
             <span class="res-cat">${item.category}</span>
           </a>
@@ -122,6 +155,30 @@ searchInput.addEventListener('input', () => {
         Layanan tidak ditemukan...
       </li>`;
     searchResults.classList.add('active');
+  }
+});
+
+searchInput.addEventListener('keydown', (event) => {
+  if (event.key === 'ArrowDown' && searchResults.classList.contains('active')) {
+    const firstResult = searchResults.querySelector('a');
+    if (firstResult) {
+      event.preventDefault();
+      firstResult.focus();
+    }
+  }
+  if (event.key === 'Escape') searchResults.classList.remove('active');
+});
+
+searchResults.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape') {
+    searchResults.classList.remove('active');
+    searchInput.focus();
+  }
+});
+
+document.addEventListener('focusin', (event) => {
+  if (!event.target.closest('.search-wrapper')) {
+    searchResults.classList.remove('active');
   }
 });
 

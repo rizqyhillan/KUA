@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="../include/style/footer.css">
 </head>
 <body>
-  <?php include '../include/header.php'; ?>
+  <?php include __DIR__ . '/../include/header.php'; ?>
    <div class="jadwal-container">
     <h2>Jadwal Sholat Wilayah Kalisat - Oktober 2025</h2>
 
@@ -67,6 +67,6 @@
     <a href="../index.php" class="back-button">Kembali ke Beranda</a>
   </div>
 
-  <?php include '../include/footer.php'; ?>
+  <?php include __DIR__ . '/../include/footer.php'; ?>
 </body>
 </html>

@@ -10,12 +10,12 @@
   <link rel="stylesheet" href="../include/style/footer.css">
 </head>
 <body>
-  <?php include '../include/header.php'; ?>
+  <?php include __DIR__ . '/../include/header.php'; ?>
   
   <img src="../assets/rekomendasi.svg" alt="Dokumen dan Regulasi" class="rekomen">
   
   <a href="../index.php" class="back-button">Kembali ke Beranda</a>
 
-  <?php include '../include/footer.php'; ?>
+  <?php include __DIR__ . '/../include/footer.php'; ?>
 </body>
 </html>

@@ -44,10 +44,16 @@
 }
 
 .contact-img {
+  flex-shrink: 0;
   width: 60px;
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.contact-info {
+  min-width: 0;
+  overflow-wrap: anywhere;
 }
 
 .contact-info h3 {

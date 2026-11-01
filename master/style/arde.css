@@ -43,6 +43,11 @@
 }
 
 /* Gambar artikel */
+.ardox img {
+  max-width: 100%;
+  height: auto;
+}
+
 .gamkov {
   width: 100%;
   max-height: 400px;

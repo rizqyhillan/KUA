@@ -1,12 +1,13 @@
+<?php require_once __DIR__ . '/paths.php'; ?>
 <footer>
   <div class="fotkon">
     <div class="fotin">
-      <img src="../assets/logo-kemenag.svg" alt="Logo Kemenag" class="fotlo">
+      <img src="<?= kua_url('assets/logo-kemenag.svg') ?>" alt="Logo Kemenag" class="fotlo">
       <div class="fote">
         <h3>KUA Kalisat Jember</h3>
         <p>Kementerian Agama Republik Indonesia</p>
         <p>Jl. Bromo No.16, Krajan I, Kalisat, Kec. Kalisat, Kabupaten Jember, Jawa Timur 68193</p>
-        <p>Email: <a href="#">kuakalisat133@gmail.com</a></p>
+        <p>Email: <a href="mailto:kuakalisat133@gmail.com">kuakalisat133@gmail.com</a></p>
       </div>
     </div>
 

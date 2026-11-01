@@ -9,12 +9,13 @@
 }
 
 .ru {
-  width: 70%;
+  display: block;
+  width: calc(100% - 40px);
   max-width: 650px;
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px;
+  margin: 32px auto 24px;
 }
 
 .back-button {

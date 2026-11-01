@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="include/style/footer.css" />
 </head>
 <body>
-  <?php include 'include/header1.php'; ?>
+  <?php include __DIR__ . '/include/header.php'; ?>
 
   <!-- Announcement Ticker -->
   <div class="text-jalan">
@@ -33,12 +33,12 @@
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="text" id="searchInput" placeholder="Cari layanan..." autocomplete="off" />
+          <input type="search" id="searchInput" placeholder="Cari layanan..." aria-label="Cari layanan" aria-controls="searchResults" autocomplete="off" />
           <!-- <button id="searchBtn" type="button">Cari Layanan</button> -->
         </div>
         
         <!-- Live Search Dropdown -->
-        <ul class="search-results" id="searchResults"></ul>
+        <ul class="search-results" id="searchResults" aria-label="Hasil pencarian layanan"></ul>
       </div>
     </div>
   </section>
@@ -54,123 +54,122 @@
 
     <!-- Redesigned Grid Box -->
     <section class="info">
-      <a class="kartu">
-        <div class="kartu-top">
-          <div class="icon-box">
+      <button type="button" class="kartu" data-category="INFO NIKAH" aria-haspopup="dialog" aria-controls="bottomSheet" aria-expanded="false" aria-labelledby="service-title-1">
+        <span class="kartu-top">
+          <span class="icon-box">
             <img src="assets/info.svg" alt="Info Nikah" />
-          </div>
+          </span>
           <span class="kartu-badge">Layanan Utama</span>
-        </div>
-        <div class="kartu-body">
-          <h3>INFO NIKAH</h3>
-          <p>Pendaftaran nikah online, syarat administrasi, isbat nikah, & duplikat buku nikah.</p>
-        </div>
-        <div class="kartu-footer">
+        </span>
+        <span class="kartu-body">
+          <span class="kartu-title" id="service-title-1">INFO NIKAH</span>
+          <span class="kartu-desc">Pendaftaran nikah online, syarat administrasi, isbat nikah, & duplikat buku nikah.</span>
+        </span>
+        <span class="kartu-footer">
           <span>Buka Layanan</span>
           <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
+        </span>
+      </button>
 
-      <a class="kartu">
-        <div class="kartu-top">
-          <div class="icon-box">
+      <button type="button" class="kartu" data-category="PROSEDUR LAYANAN KUA" aria-haspopup="dialog" aria-controls="bottomSheet" aria-expanded="false" aria-labelledby="service-title-2">
+        <span class="kartu-top">
+          <span class="icon-box">
             <img src="assets/prosedur.svg" alt="Prosedur Layanan" />
-          </div>
+          </span>
           <span class="kartu-badge">Panduan</span>
-        </div>
-        <div class="kartu-body">
-          <h3>PROSEDUR LAYANAN KUA</h3>
-          <p>Alur pendaftaran SIMKAH, tata cara pencatatan rujuk, hingga alur pelaporan wakaf.</p>
-        </div>
-        <div class="kartu-footer">
+        </span>
+        <span class="kartu-body">
+          <span class="kartu-title" id="service-title-2">PROSEDUR LAYANAN KUA</span>
+          <span class="kartu-desc">Alur pendaftaran SIMKAH, tata cara pencatatan rujuk, hingga alur pelaporan wakaf.</span>
+        </span>
+        <span class="kartu-footer">
           <span>Buka Layanan</span>
           <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
+        </span>
+      </button>
 
-      <a class="kartu">
-        <div class="kartu-top">
-          <div class="icon-box">
+      <button type="button" class="kartu" data-category="FIQIH PERNIKAHAN" aria-haspopup="dialog" aria-controls="bottomSheet" aria-expanded="false" aria-labelledby="service-title-3">
+        <span class="kartu-top">
+          <span class="icon-box">
             <img src="assets/konsultasi.svg" alt="Konsultasi" />
-          </div>
+          </span>
           <span class="kartu-badge">Konsultasi</span>
-        </div>
-        <div class="kartu-body">
-          <h3>FIQIH PERNIKAHAN</h3>
-          <p>Konsultasi langsung dengan petugas KUA terkait keluarga sakinah & hukum Islam.</p>
-        </div>
-        <div class="kartu-footer">
+        </span>
+        <span class="kartu-body">
+          <span class="kartu-title" id="service-title-3">FIQIH PERNIKAHAN</span>
+          <span class="kartu-desc">Konsultasi langsung dengan petugas KUA terkait keluarga sakinah & hukum Islam.</span>
+        </span>
+        <span class="kartu-footer">
           <span>Buka Layanan</span>
           <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
+        </span>
+      </button>
 
-      <a class="kartu">
-        <div class="kartu-top">
-          <div class="icon-box">
+      <button type="button" class="kartu" data-category="BERITA &amp; ARTIKEL" aria-haspopup="dialog" aria-controls="bottomSheet" aria-expanded="false" aria-labelledby="service-title-4">
+        <span class="kartu-top">
+          <span class="icon-box">
             <img src="assets/artikel.svg" alt="Berita" />
-          </div>
+          </span>
           <span class="kartu-badge">Informasi</span>
-        </div>
-        <div class="kartu-body">
-          <h3>BERITA & ARTIKEL</h3>
-          <p>Kumpulan artikel keagamaan, kabar seputar kegiatan KUA Kalisat, dan pengumuman.</p>
-        </div>
-        <div class="kartu-footer">
+        </span>
+        <span class="kartu-body">
+          <span class="kartu-title" id="service-title-4">BERITA & ARTIKEL</span>
+          <span class="kartu-desc">Kumpulan artikel keagamaan, kabar seputar kegiatan KUA Kalisat, dan pengumuman.</span>
+        </span>
+        <span class="kartu-footer">
           <span>Buka Layanan</span>
           <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
+        </span>
+      </button>
 
-      <a class="kartu">
-        <div class="kartu-top">
-          <div class="icon-box">
+      <button type="button" class="kartu" data-category="GALERI &amp; DOKUMENTASI" aria-haspopup="dialog" aria-controls="bottomSheet" aria-expanded="false" aria-labelledby="service-title-5">
+        <span class="kartu-top">
+          <span class="icon-box">
             <img src="assets/galeri.svg" alt="Galeri" />
-          </div>
+          </span>
           <span class="kartu-badge">Dokumentasi</span>
-        </div>
-        <div class="kartu-body">
-          <h3>GALERI & DOKUMENTASI</h3>
-          <p>Dokumentasi foto dan video kegiatan operasional serta pelayanan masyarakat KUA.</p>
-        </div>
-        <div class="kartu-footer">
+        </span>
+        <span class="kartu-body">
+          <span class="kartu-title" id="service-title-5">GALERI & DOKUMENTASI</span>
+          <span class="kartu-desc">Dokumentasi foto dan video kegiatan operasional serta pelayanan masyarakat KUA.</span>
+        </span>
+        <span class="kartu-footer">
           <span>Buka Layanan</span>
           <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
+        </span>
+      </button>
 
-      <a class="kartu">
-        <div class="kartu-top">
-          <div class="icon-box">
+      <button type="button" class="kartu" data-category="DOKUMEN &amp; REGULASI" aria-haspopup="dialog" aria-controls="bottomSheet" aria-expanded="false" aria-labelledby="service-title-6">
+        <span class="kartu-top">
+          <span class="icon-box">
             <img src="assets/dokumen.svg" alt="Dokumen" />
-          </div>
+          </span>
           <span class="kartu-badge">Regulasi</span>
-        </div>
-        <div class="kartu-body">
-          <h3>DOKUMEN & REGULASI</h3>
-          <p>Unduh formulir pendaftaran nikah, PMA, Perdirjen, dan berkas regulasi resmi.</p>
-        </div>
-        <div class="kartu-footer">
+        </span>
+        <span class="kartu-body">
+          <span class="kartu-title" id="service-title-6">DOKUMEN & REGULASI</span>
+          <span class="kartu-desc">Unduh formulir pendaftaran nikah, PMA, Perdirjen, dan berkas regulasi resmi.</span>
+        </span>
+        <span class="kartu-footer">
           <span>Buka Layanan</span>
           <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </div>
-      </a>
+        </span>
+      </button>
     </section>
   </main>
 
-  <!-- Overlay & Bottom Sheet Modal -->
-  <div class="overlay" id="overlay"></div>
-  <div class="bottom-sheet" id="bottomSheet">
+  <!-- Bottom Sheet Modal -->
+  <dialog class="bottom-sheet" id="bottomSheet" aria-labelledby="sheet-title">
     <div class="sheet-header">
       <h3 id="sheet-title">Judul Menu</h3>
-      <button id="closeSheet" aria-label="Tutup">✕</button>
+      <button type="button" id="closeSheet" aria-label="Tutup menu layanan" autofocus>✕</button>
     </div>
     <div class="sheet-content" id="sheet-content">
       <p>Memuat daftar pilihan...</p>
     </div>
-  </div>
+  </dialog>
 
-  <?php include 'include/footer1.php'; ?>
+  <?php include __DIR__ . '/include/footer.php'; ?>
   <script src="overlay.js"></script>
 </body>
 </html>

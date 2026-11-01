@@ -14,6 +14,22 @@ body {
   line-height: 1.6;
 }
 
+body.sheet-open {
+  overflow: hidden;
+}
+
+:focus-visible {
+  outline: 3px solid #047857;
+  outline-offset: 4px;
+}
+
+body > .back-button {
+  display: table;
+  max-width: calc(100% - 40px);
+  margin: 24px auto;
+  text-align: center;
+}
+
 /* Announcement Ticker Bar */
 .text-jalan {
   background-color: #0f172a;
@@ -84,6 +100,7 @@ body {
 }
 
 .search-icon {
+  flex-shrink: 0;
   width: 20px;
   height: 20px;
   stroke: #64748b;
@@ -93,11 +110,18 @@ body {
 
 .search-box input {
   flex: 1;
+  min-width: 0;
+  width: 100%;
   border: none;
   outline: none;
   font-size: 14px;
   color: #0f172a;
   padding: 10px 4px;
+}
+
+.search-box:focus-within {
+  outline: 3px solid #10b981;
+  outline-offset: 3px;
 }
 
 .search-box input::placeholder {
@@ -136,23 +160,28 @@ body {
   text-decoration: none;
   border-bottom: 1px solid #f1f5f9;
   color: #0f172a;
+  gap: 12px;
 }
 
 .search-results li:last-child a {
   border-bottom: none;
 }
 
-.search-results li a:hover {
+.search-results li a:hover,
+.search-results li a:focus-visible {
   background-color: #ecfdf5;
 }
 
 .search-results .res-title {
+  min-width: 0;
+  overflow-wrap: anywhere;
   font-weight: 600;
   font-size: 14px;
   color: #0f172a;
 }
 
 .search-results .res-cat {
+  flex-shrink: 0;
   font-size: 11px;
   background-color: #e2e8f0;
   color: #475569;
@@ -208,6 +237,10 @@ body {
   cursor: pointer;
   transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  width: 100%;
+  min-width: 0;
+  font: inherit;
+  text-align: left;
 }
 
 .kartu:hover {
@@ -221,9 +254,11 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
+  gap: 12px;
 }
 
 .icon-box {
+  flex-shrink: 0;
   width: 44px;
   height: 44px;
   background-color: #ecfdf5;
@@ -248,7 +283,13 @@ body {
   border-radius: 4px;
 }
 
-.kartu-body h3 {
+.kartu-body,
+.kartu-title,
+.kartu-desc {
+  display: block;
+}
+
+.kartu-title {
   font-size: 15px;
   font-weight: 700;
   color: #0f172a;
@@ -256,7 +297,7 @@ body {
   line-height: 1.4;
 }
 
-.kartu-body p {
+.kartu-desc {
   font-size: 13px;
   color: #64748b;
   line-height: 1.5;
@@ -284,40 +325,38 @@ body {
   transform: translateX(4px);
 }
 
-/* Bottom Sheet / Modal Menu Styling */
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+/* Native dialog keeps keyboard focus inside the service menu. */
+.bottom-sheet::backdrop {
   background: rgba(15, 23, 42, 0.5);
   backdrop-filter: blur(3px);
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.25s ease;
-  z-index: 998;
 }
 
 .bottom-sheet {
   position: fixed;
-  left: 50%;
-  bottom: -100%;
-  transform: translateX(-50%);
+  inset: auto 0 0;
+  margin: 0 auto;
   width: 100%;
   max-width: 600px;
   background: #ffffff;
+  color: #1e293b;
+  border: none;
   border-radius: 16px 16px 0 0;
   box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
-  transition: bottom 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  z-index: 999;
   max-height: 80vh;
+  max-height: 80dvh;
   overflow-y: auto;
-  padding: 24px;
+  overscroll-behavior: contain;
+  padding: 24px 24px max(24px, env(safe-area-inset-bottom));
 }
 
-.overlay.active { opacity: 1; visibility: visible; }
-.bottom-sheet.active { bottom: 0; }
+.bottom-sheet[open] {
+  animation: open-sheet 0.25s ease-out;
+}
+
+@keyframes open-sheet {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
 
 .sheet-header {
   display: flex;
@@ -325,6 +364,7 @@ body {
   align-items: center;
   border-bottom: 1px solid #e2e8f0;
   padding-bottom: 14px;
+  gap: 12px;
 }
 
 .sheet-header h3 {
@@ -334,6 +374,11 @@ body {
 }
 
 .sheet-header button {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 44px;
+  height: 44px;
   background: none;
   border: none;
   font-size: 18px;
@@ -373,6 +418,7 @@ body {
   color: #1e293b;
   font-size: 14px;
   font-weight: 600;
+  gap: 12px;
 }
 
 .sheet-menu li a .link-text {
@@ -382,6 +428,7 @@ body {
 }
 
 .sheet-menu li a i.icon-link {
+  flex-shrink: 0;
   width: 6px;
   height: 6px;
   background-color: #047857;
@@ -399,7 +446,16 @@ body {
   .hero-banner { padding: 40px 16px 60px 16px; }
   .main-container { margin-top: 20px; }
   .info { grid-template-columns: 1fr; }
-  .search-box { flex-direction: column; padding: 8px; gap: 8px; }
-  /* .search-box button { width: 100%; } */
-  .search-icon { display: none; }
+  .search-wrapper .search-box { padding: 8px; }
+  .search-wrapper .search-box input { font-size: 16px; }
+  .search-results li a { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .bottom-sheet { padding: 20px 16px max(20px, env(safe-area-inset-bottom)); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .jalanan { white-space: normal; padding: 0 16px; }
 }

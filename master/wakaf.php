@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="../include/style/footer.css">
 </head>
 <body>
-  <?php include '../include/header.php'; ?>
+  <?php include __DIR__ . '/../include/header.php'; ?>
 
   <section class="wakaf-section">
     <div class="wakaf-container">
@@ -68,6 +68,6 @@
     </div>
   </section>
 
-  <?php include '../include/footer.php'; ?>
+  <?php include __DIR__ . '/../include/footer.php'; ?>
 </body>
 </html>
